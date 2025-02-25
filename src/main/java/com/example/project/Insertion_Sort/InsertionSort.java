@@ -8,7 +8,15 @@ public class InsertionSort {
 
     // PART A. implementing insertion sort
     public static int[] insertionSort(int[] elements) {
-       
+        for (int i = 0; i < elements.length; i++) {
+            int j = i;
+            while (j > 0 && elements[j] < elements[j - 1]) {
+                int temp = elements[j];
+                elements[j] = elements[j - 1];
+                elements[j - 1] = temp;
+                j--;
+            }
+        }
         return elements;
     }
 
@@ -19,7 +27,14 @@ public class InsertionSort {
 
     // PART B. sorting a 1000-word list
     public static ArrayList<String> insertionSortWordList(ArrayList<String> words) {
-    
+        for (int i = 0; i < words.size(); i++) {
+            int j = i;
+            while (j > 0 && words.get(j).compareTo(words.get(j - 1)) < 0) {
+                String temp = words.set(j, words.get(j - 1));
+                words.set(j - 1, temp);
+                j--;
+            }
+        }
         return words;
     }
 
